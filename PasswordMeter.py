@@ -7,8 +7,8 @@ st.markdown("""
 <style>
             .main {text-align: center;}
             .stTextInput {width: 60% !important; margin: auto;}
-            .stButtom button {width: 50%; background-color #4CAF50; color: white; font-size: 18px;}
-            .stButton button:hover { background-color: #45a049}
+            .stButtom button {width: 50%; background-color #FF69B4; color: white; font-size: 18px;}
+            .stButton button:hover { background-color: #FF69B4}
 </style>
 """, unsafe_allow_html=True)
 
@@ -41,11 +41,11 @@ def check_password_strenght(password):
         feedback.append(" Include at least one special character (!@#$%^&)")
 
     if score == 4:
-        st.success("STRONGER PASSWORD - Your password is secure.")
+        st.success(" ✅ STRONGER PASSWORD - Your password is secure.")
     elif score == 3:
-        st.info("MODERATE PASSWORD - consider imporving security by adding more feature")
+        st.info(" 📢 MODERATE PASSWORD - consider imporving security by adding more feature")
     else:
-        st.error("WEEK PASSWORD - Follow the suggestion below to strenght it.")
+        st.error("❌ WEEK PASSWORD - Follow the suggestion below to strenght it.")
 
     if feedback:
         with st.expander("Impove Your Password"):
