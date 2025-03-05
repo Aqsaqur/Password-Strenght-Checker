@@ -7,12 +7,12 @@ st.markdown("""
 <style>
             .main {text-align: center;}
             .stTextInput {width: 60% !important; margin: auto;}
-            .stButtom button {width: 50%; background-color #FF69B4; color: white; font-size: 18px;}
+            .stButton button {width: 50%; background-color #FF69B4; color: white; font-size: 18px;}
             .stButton button:hover { background-color: #FF69B4}
 </style>
 """, unsafe_allow_html=True)
 
-st.title("Password strenght Generator")
+st.title("Password strength Generator")
 st.write("Enter your password below to check its security level.")
 
 def check_password_strenght(password):
@@ -43,15 +43,15 @@ def check_password_strenght(password):
     if score == 4:
         st.success(" ✅ STRONGER PASSWORD - Your password is secure.")
     elif score == 3:
-        st.info(" 📢 MODERATE PASSWORD - consider imporving security by adding more feature")
+        st.info(" 📢 MODERATE PASSWORD - consider improving security by adding more feature")
     else:
-        st.error("❌ WEEK PASSWORD - Follow the suggestion below to strenght it.")
+        st.error("❌ WEAK PASSWORD - Follow the suggestion below to strenght it.")
 
     if feedback:
         with st.expander("Impove Your Password"):
             for item in feedback:
                 st.write(item)
-password = st.text_input("Enter your password", type="password", help="Ensure yut password is strong")
+password = st.text_input("Enter your password", type="password", help="Ensure your password is strong")
 
 if st.button("Check Strenght"):
     if password:
