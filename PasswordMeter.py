@@ -13,7 +13,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("Password strenght Generator")
-st.white("Enter your password below to check its security level.")
+st.write("Enter your password below to check its security level.")
 
 def check_password_strenght(password):
     score = 0
@@ -38,12 +38,12 @@ def check_password_strenght(password):
     if re.search(r"[!@#$%^&]", password):
         score += 1
     else:
-        feedback.append(" Include at least one specail character (!@#$%^&)")
+        feedback.append(" Include at least one special character (!@#$%^&)")
 
     if score == 4:
         st.success("STRONGER PASSWORD - Your password is secure.")
     elif score == 3:
-        st.info("MODERATE PASSWORD - cnsider imporving security by adding more feature")
+        st.info("MODERATE PASSWORD - consider imporving security by adding more feature")
     else:
         st.error("WEEK PASSWORD - Follow the suggestion below to strenght it.")
 
